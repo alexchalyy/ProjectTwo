@@ -10,7 +10,7 @@ Project 2 pseudo code.
 
 2. When user clicks on Menu button.
 
-   a. Next page is opened with menu items (each item is a button). They include: menu item number, name, and price.
+   a. Next page is opened with menu items (each item is a button). They include: menu item number, name, and price. DONE.
 
    b. Home button.
 
