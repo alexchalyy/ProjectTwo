@@ -1,12 +1,12 @@
 Project 2 pseudo code.
 
-1. When user opens deli page, home page is opened. The following are present.
+1. When user opens deli page, home page is opened. The following are present. DONE.
 
-   a. Welcome disclaimer.
+   a. Welcome disclaimer. DONE.
 
-   b. Menu button.
+   b. Menu button. DONE.
 
-   c. Orders button.
+   c. Orders button. DONE.
 
 2. When user clicks on Menu button.
 
