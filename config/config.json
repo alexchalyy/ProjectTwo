@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Bootcamp1!?",
-    "database": "exampledb",
+    "database": "delidb",
     "host": "localhost",
     "dialect": "mysql"
   },
