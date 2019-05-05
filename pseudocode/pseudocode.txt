@@ -12,13 +12,13 @@ Project 2 pseudo code.
 
    a. Next page is opened with menu items (each item is a button). They include: menu item number, name, and price. DONE.
 
-   b. Home button.
+   b. Home button. DONE.
 
-   c. Orders button.
+   c. Orders button. DONE.
 
-3. When user clicks on either order button or clicks on menu item, orders page is opened and the following logic is performed.
+3. When user clicks on either order button or clicks on menu item, orders page is opened and the following logic is performed. STUCK
 
-   a. If an item was freshly ordered, it is placed in processing column with its name, index number, order time, and time to be ready displayed.
+   a. If an item was freshly ordered, it is placed in processing column with its name, index number, order time, and time to be ready displayed. STUCK
 
    b. If enough time passes for the item to be ready and user refreshes the page, the menu item is moved from processing column to ready for pick up column. The following are dispalyed for the item in ready to pick up column: index number, name, and pick up button.
 
