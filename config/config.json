@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "root",
-    "password": "Bootcamp1!?",
-    "database": "exampledb",
+    "username": "trilogy",
+    "password": "password123",
+    "database": "deli_db",
     "host": "localhost",
     "dialect": "mysql"
   },
