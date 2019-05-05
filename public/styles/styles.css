@@ -1,3 +1,32 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.grid{
+  display: grid;
+}
+
+h1{
+  font-size:7rem;
+}
+
+.carousel-item img{
+  height: 650px;
+  width: auto;
+}
+
+.menu-list{
+  list-style: none;
+}
+
+.car-links{
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.menu-list li{
+  border: 1px solid black;
+  padding: .25rem;
+  margin:.25rem;  
+
+}
