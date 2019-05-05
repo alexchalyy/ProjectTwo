@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "trilogy",
-    "password": "password123",
-    "database": "deli_db",
+    "username": "root",
+    "password": "Bootcamp1!?",
+    "database": "exampledb",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "trilogy",
-    "password": "password123",
+    "username": "root",
+    "password": null,
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
