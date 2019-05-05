@@ -2,16 +2,22 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
+  app.get("/menu", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("index", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
   app.get("/", function(req, res) {
-    // I commented this out because our rendering of information from the database will be shown on our "order status page", but will clean this up once we 
-    // use this boiler plate code for rendering the data needed.
-    // db.Example.findAll({}).then(function(dbExamples) {                   
-    //   res.render("index", {
-    //     msg: "Welcome!",
-    //     examples: dbExamples
-    //   });
-    // });
-    res.render("index");
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("home", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
   });
 
   // Load example page and pass in an example by id
