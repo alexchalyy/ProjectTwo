@@ -31,6 +31,11 @@ module.exports = function(app) {
       });
     });
   });
+  
+  // render the menu page
+  app.get("/menu", function(req, res) {
+    res.render("menu");
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
