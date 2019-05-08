@@ -1,53 +1,226 @@
-<div class="menu">
-        <ul class="menu-list">
-            {{!-- All of this li items will eventaully become a POST that should post the data-order value to the database This is 
-                obviously very basic. I usually start out very simple and add style once I get a base--}}
 
-            <li data-order="pastrami">Pastrami
-                <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+<div class="menu-wrap">
+    <div class="menu">
+        <h1 class="menu-title">Tori's Deli Menu</h1>
+
+        <div id="button-wrap">
+            <div id="button-nav">
+
+                <a href="/">
+                    <h2 class="nav-button">Home</h2>
+                </a>
+                <a href="/orders">
+                    <h2 class="nav-button">Orders</h2>
+                </a>
+
+            </div>
+        </div>
+        {{!-- mobile to ipad --}}
+        <!-- <ul class="menu-list">
+            
+            <li class="order-me">
+                <img src="/images/pastrami.jpg" alt="" class="menu-thumbnail clearfix">    
+                <p>Pastrami</p> 
+                <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p> 
                 <p class="price">$000</p>
+                <p class="order-button" data-order="pastrami">Order</p>
             </li>
-            <li data-order="reuben">reuben
+            <li class="order-me">
+                <img src="/images/reuben.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Reuben</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="reuben">Order</p>
             </li>    
-            <li data-order="turkey-club">Turkey Club
+            <li class="order-me">
+                <img src="/images/turkey.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Turkey Club</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="turkey-club">Order</p>
             </li>    
-            <li data-order="french-dip">French Dip
+            <li class="order-me">
+                <img src="/images/french.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>French Dip</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="french-dip">Order</p>
             </li>    
-            <li data-order="tuna-melt">Tuna Melt
+            <li class="order-me">
+                <img src="/images/tuna.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Tuna Melt</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="tuna-melt">Order</p>
             </li>    
-            <li data-order="chicken-salad">Chicken salad
+            <li class="order-me">
+                <img src="/images/chicken-salad.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Chicken salad</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="chicken-salad">Order</p>
             </li>    
-            <li data-order="italian">Italian
+            <li class="order-me">
+                <img src="/images/italian.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Italian</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p> 
+                <p class="order-button" data-order="italian">Order</p>
             </li>            
-            <li data-order="brisket">Brisket
+            <li class="order-me">
+                <img src="/images/brisket.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Brisket</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="brisket">Order</p>
             </li>    
-            <li data-order="ham-and-swiss">Ham and Swiss
-                <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+            <li class="order-me">
+                <img src="/images/ham.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Ham and Swiss</p> 
+                <p class="item-description" class="order-me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="ham-and-swiss">Order</p>
             </li>    
-            <li data-order="meatball">Meatball
+            <li class="order-me">
+                <img src="/images/meatball.jpg" alt="" class="menu-thumbnail clearfix"> 
+                <p>Meatball</p> 
                 <p class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
                 <p class="price">$000</p>
+                <p class="order-button" data-order="meatball" >Order</p>
             </li>    
 
-        </ul>
+            <a href="/">
+                <h2 class="nav-button">Home</h2>
+            </a>
+            <a href="/orders">
+            <h2 class="nav-button">Orders</h2>
+            </a>
+        
+        
+        </ul> -->
 
-        <a href="/">Home</a>
+        <!--ipad and up version-->
+
+        <div id="card-wrap">
+
+            <div id="card-menu">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/pastrami.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Pastrami</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="pastrami">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/reuben.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Reuben</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="reuben">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/turkey.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Turkey Club</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="turkey-club">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/french.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">French Dip</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="french-dip">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/tuna.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tuna Melt</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="tuna-melt">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/chicken-salad.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicken Salad</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="chicken-salad">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/italian.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Italian</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="italian">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/brisket.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Brisket</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="brisket">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/ham.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ham and Swiss</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="ham-and-swiss">Order</p>
+
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/meatball.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Meatball</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dolor nam debitis? Molestias, tenetur accusamus.</p>
+                        <p class="price">$000</p>
+                        <p class="order-button" data-order="meatball">Order</p>
+
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>  
+        
+
     </div>
-
+</div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
