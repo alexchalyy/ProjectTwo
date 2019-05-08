@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  // app.get("/menu", function(req, res) {
+  // app.get("/menu", function(req, res) { commented out 
   //   db.Dish.findAll({}).then(function(dbDishes) {
   //     res.render("index", {
   //       msg: "Welcome!",
