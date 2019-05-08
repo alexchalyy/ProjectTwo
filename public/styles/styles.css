@@ -91,7 +91,7 @@
 }
 
 #card-menu{
-  display: none;
+  /* display: none; */
 } 
 
 #button-wrap{
@@ -106,7 +106,7 @@
   align-content: center;
 }
 
-/*
+/* desktop only for now
   
  @media  (min-width: 768px) { 
  
