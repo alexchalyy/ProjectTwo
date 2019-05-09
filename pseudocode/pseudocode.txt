@@ -2,6 +2,7 @@ Project 2 pseudo code.
 
 
 
+
 1. When user opens deli page, home page is opened. The following are present. DONE.
 
    
@@ -15,6 +16,7 @@ b. Menu button. DONE.
    
 
 c. Orders button. DONE.
+
 
 
 
@@ -34,6 +36,7 @@ c. Orders button. DONE.
 
 
 
+
 3. When user clicks on either order button or clicks on menu item, orders page is opened and the following logic is performed. STUCK
 
    
@@ -48,6 +51,12 @@ b. If enough time passes for the item to be ready and user refreshes the page, t
 
 c. If user clicks on pick up button next to a menu item in ready column, it is removed from the pick up column.
 
-   
+
+
+
+4. Upload to Heroku.
+
+
+5. Add API authantication.
 
    

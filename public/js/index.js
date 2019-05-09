@@ -1,7 +1,8 @@
 var $dishText;
+var $dishIndex;
 
-$(".order-button").on("click", function(){
-  window.location.href="/orders"
+$(".order-button").on("click", function () {
+  window.location.href = "/orders"
   return $dishText = this.dataset.order
 })
 
@@ -18,8 +19,12 @@ var $dishList = $("#example-list");
 
 // -----------------------------------------------
 //--this block of code should go near the top of index.js 
-replacing line 2--//
-$(".order-button").on("click", function(){
+//replacing line 2--//
+$(".order-button").on("click", function () {
+  //console.log("5 minutes from now: " + new Date(date.getTime() + minutes*60000));
+  var now = new Date(Date.now() + (5 * 60 * 1000));
+  console.log(now);
+
   return $dishText = this.dataset.order
 })
 var $dishText;
@@ -28,7 +33,7 @@ var $dishText;
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveDish: function(dish) {
+  saveDish: function (dish) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -38,7 +43,7 @@ var API = {
       data: JSON.stringify(dish)
     });
   },
-  getDishes: function() {
+  getDishes: function () {
     return $.ajax({
       url: "api/dishes",
       type: "GET"
@@ -57,9 +62,9 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshDishes = function() {
-  API.getDishes().then(function(data) {
-    var $dishes = data.map(function(dish) {
+var refreshDishes = function () {
+  API.getDishes().then(function (data) {
+    var $dishes = data.map(function (dish) {
       var $a = $("<a>")
         .text(dish.text)
         .attr("href", "/dish/" + dish.id);
@@ -109,14 +114,15 @@ var refreshDishes = function() {
 //   $dishText.val("");
 //   $dishDescription.val("");
 // };
-var handleFormSubmit = function(event) {
+var handleFormSubmit = function (event) {
   event.preventDefault();
   //the $dishText var below will add the data-order
   // attribute to the table
+
   var dish = {
-    text: $dishText,  
+    text: $dishText,
   };
-  API.saveDish(dish).then(function() {
+  API.saveDish(dish).then(function () {
     //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
     // refreshExamples();
     // console.log("added order to db");
@@ -125,12 +131,12 @@ var handleFormSubmit = function(event) {
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
+var handleDeleteBtnClick = function () {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteDish(idToDelete).then(function() {
+  API.deleteDish(idToDelete).then(function () {
     refreshDishes();
   });
 };

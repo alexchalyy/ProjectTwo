@@ -20,7 +20,9 @@
         <ul id="dish-list" class="list-group">
           {{#each dishes}}
           <li data-id="{{this.id}}" class="list-group-item">
+            <a href="dish/{{this.id}}">{{this.id}}</a>
             <a href="dish/{{this.id}}">{{this.text}}</a>
+            <a href="dish/{{this.id}}">{{this.createdAt}}</a>
           </li>
           {{/each}}
         </ul>
