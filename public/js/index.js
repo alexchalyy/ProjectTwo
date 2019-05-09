@@ -4,6 +4,18 @@ var $dishDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $dishList = $("#example-list");
 
+//--------------------------------------------------------------------
+
+// -----------------------------------------------
+//--this block of code should go near the top of index.js 
+replacing line 2--//
+$(".order-button").on("click", function(){
+  return $dishText = this.dataset.order
+})
+var $dishText;
+
+//--------------------------------------------------------------------
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveDish: function(dish) {
