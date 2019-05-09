@@ -1,50 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Orders <span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <!--<h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="dish-text">Example Text</label>
-            <input type="text" id="dish-text" class="form-control" aria-describedby="dish-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="dish-description" aria-describedby="dish-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form> -->
-        <h3>Menu</h3>
-        <ul id="dish-list" class="list-group">
-          {{#each dishes}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="dish/{{this.id}}">{{this.text}}</a>
-            <!--<button class="btn btn-danger float-right delete">ｘ</button>-->
-            <p class="price float-right">$7.99</p>
-          </li>
 
-          
-          {{/each}}
-        </ul>
-      </div>
+    <div class="container-fluid" style="width: 90%">
+        <div id="carousel-fade" class="carousel carousel-fade" data-ride="carousel" data-interval="5000">
+
+            <div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox">
+                <div class="carousel-item embed-responsive-item active">
+                    <img src="deliCounter1.jpg" alt="First slide image" class="img-fluid">
+                </div>
+
+                <div class="carousel-item embed-responsive-item">
+                    <img src="deliCounter2.jpg" alt="Second slide image" class="img-fluid">
+
+                </div>
+
+                <div class="carousel-item embed-responsive-item">
+                    <img src="deliCounter3.jpg" alt="Third slide image" class="img-fluid">
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-md-12"><br><br><br><br><br><br></div> -->
+            <div class="indexBlock" id="jumboBody">
+                <div>
+                    <h4 id="jumboHeadline">
+                        TORI'S<br>DELI</h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+                    cupiditate facere impedit reprehenderit id expedita deserunt non, minima ab consequatur?
+                    Quod perspiciatis nemo perferendis tempore nihil a! <br><br>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-outline-secondary jumboButton">Menu</button>
+                        <button type="button" class="btn btn-outline-secondary jumboButton">Order</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <script src="assets/javascript/app.js"></script>

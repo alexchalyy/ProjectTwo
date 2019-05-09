@@ -174,3 +174,42 @@
   }
 
 }    
+.jumbotron {
+    background-image: url(deli1.jpg);
+    background-size: cover;
+    height: 300px;
+    margin-top: 2rem;
+}
+#jumboBody {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 1em;
+}
+#jumboHeadline {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* .jumboButton {
+    padding: 6px 8px 6px 16px;
+} */
+
+.carousel.carousel-fade .carousel-item {
+  display: block;
+  opacity: 0;
+  transition: opacity ease-out 3s;
+  width: 100%
+}
+
+.carousel.carousel-fade .carousel-item.active {
+  opacity: 1 !important;
+}
+.indexBlock {
+  z-index: 999;
+  position: absolute;
+  top: 11rem;
+  left: 4rem;
+  width: 16rem;
+}
