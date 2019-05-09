@@ -1,7 +1,17 @@
+var $dishText;
+
+$(".order-button").on("click", function(){
+  window.location.href="/orders"
+  return $dishText = this.dataset.order
+})
+
+var $submitBtn = $(".order-button");
 // Get references to page elements
-var $dishText = $("#example-text");
+//commented out per David's advice
+// var $dishText = $("#example-text");
+
+//not sure these are needed for anything in our code yet:
 var $dishDescription = $("#example-description");
-var $submitBtn = $("#submit");
 var $dishList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
@@ -21,13 +31,17 @@ var API = {
       url: "api/dishes",
       type: "GET"
     });
-  },
-  deleteDish: function(id) {
-    return $.ajax({
-      url: "api/dishes/" + id,
-      type: "DELETE"
-    });
   }
+
+  //think there will need to be an update/put method here
+
+
+  // deleteDish: function(id) {
+  //   return $.ajax({
+  //     url: "api/dishes/" + id,
+  //     type: "DELETE"
+  //   });
+  // }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
@@ -61,25 +75,40 @@ var refreshDishes = function() {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
+
+//replaced this code with david's handleformsubmit below
+// var handleFormSubmit = function(event) {
+//   event.preventDefault();
+
+//   var dish = {
+//     text: $dishText.val().trim(),
+//     description: $dishDescription.val().trim()
+//   };
+
+//   if (!(dish.text && dish.description)) {
+//     alert("You must enter an example text and description!");
+//     return;
+//   }
+
+//   API.saveExample(dish).then(function() {
+//     refreshDishes();
+//   });
+
+//   $dishText.val("");
+//   $dishDescription.val("");
+// };
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
+  //the $dishText var below will add the data-order
+  // attribute to the table
   var dish = {
-    text: $dishText.val().trim(),
-    description: $dishDescription.val().trim()
+    text: $dishText,  
   };
-
-  if (!(dish.text && dish.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(dish).then(function() {
-    refreshDishes();
+  API.saveDish(dish).then(function() {
+    //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
+    // refreshExamples();
+    // console.log("added order to db");
   });
-
-  $dishText.val("");
-  $dishDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
