@@ -80,6 +80,7 @@
   width: 16rem;
 }
 
+
 .container-fluid {
   margin-top: 1em;
 
@@ -116,9 +117,11 @@
   width: 100%
 }
 
+
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
-}
+
+ 
 .indexBlock {
   z-index: 999;
   position: absolute;
