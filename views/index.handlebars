@@ -37,10 +37,10 @@
           {{#each dishes}}
           {{#if this.ready}}
           {{else}}
-            <li  class="list-group-item"><!--data-id="{{this.id}}"-->
-             <!-- <a href="dish/{{this.id}}">{{this.text}}</a>-->
+            <li  class="list-group-item">
               <p>Order: {{this.text}} </p>
               <p>Ticket # {{this.id}}</p>
+              <p>Time Ordered: {{moment this.createdAt "hh:mm a"}}</p>
             </li>
             {{/if}}
           {{/each}}

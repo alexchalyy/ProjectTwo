@@ -30,7 +30,8 @@ app.use(express.static("public"));
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "main"
+    defaultLayout: "main",
+    helpers:{ moment: require("helper-moment") }
   })
 );
 app.set("view engine", "handlebars");
