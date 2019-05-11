@@ -15,6 +15,13 @@ module.exports = function(app) {
     });
   });
 
+    // Create a new example
+    app.put("/api/dishes", function(req, res) {
+      db.Dish.create(req.body).then(function(dbDish) {
+        res.json(dbDish);
+      });
+    });
+
 // think there will need to be an update/put here
 
 //dont think this code is needed... not deleting anything
@@ -24,4 +31,24 @@ module.exports = function(app) {
        res.json(dbDish);
      });
    });
+
+       // PUT route for updating todos. We can get the updated todo data from req.body
+       app.put("/ready", function(req, res) {
+        // Update takes in an object describing the properties we want to update, and
+        // we use where to describe which objects we want to update
+        db.Dish.update({
+          text: req.body.text,
+          description: req.body.description,
+          ready: req.body.ready,
+          pickup: req.body.pickup
+        }, {
+          where: {
+            id: req.body.id
+          }
+        }).then(function(dbDish) {
+          res.json(Dish);
+        });
+      });
+
 };
+

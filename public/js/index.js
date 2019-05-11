@@ -6,54 +6,6 @@ var intervalId;
 
 var number = 10;
 
-function wait(ms){
-  var start = new Date().getTime();
-  var end = start;
-  while(end < start + ms) {
-    end = new Date().getTime();
- }
-}
-
-//----------------------------------------------------------
-
-//  The stop function
-function stop() {
-  //  Clears our intervalId
-  //  We just pass the name of the interval
-  //  to the clearInterval function.
-    console.log("stop!");
-    clearInterval(intervalId);
-  }  
-
-//----------------------------------------------------------
-
-//  The decrement function.
-function decrement() {
-  //  Decrease number by one.
-  console.log("decrement starts.");
-    number--;
-  //  Once number hits zero...
-    if (number === 0) {
-  //  ...run the stop function.
-      stop();
-      console.log("10 seconds passed!");
-   }
-  }
-
-//----------------------------------------------------------
-
-function run() {
-//  This is timer for 10 seconds.
-
-  console.log("timer starts.");
-  clearInterval(intervalId);
-  console.log("after clear interval.");
-  intervalId = setInterval(decrement, 1000);
-  console.log("after set interval is called.");
-}
-
-//--------------------------------------------------
-
 $(".order-button").on("click", function(){
   console.log("b4 timer");
   //run();
@@ -74,9 +26,17 @@ var $pickup = $(".delete");
 var $dishDescription = $("#example-description");
 //var $dishList = $("#example-list");
 var $dishList = $(".completed-orders");
+var $orderList = $(".queued-orders");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
+  updateDish: function(dish)  {
+    return $.ajax({
+      type: "PUT",
+      url: "api/dishes",
+      data: JSON.stringigy(dish)
+    })
+  },
   saveDish: function(dish) {
     return $.ajax({
       headers: {
@@ -186,9 +146,58 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+var handleReadyBtnClick = function() {
+  var idToUpdate = $(this)
+    .parent()
+    .attr("data-id");
+
+  API.updateDish(idToDelete).then(function() {
+    refreshDishes();
+    location.reload();
+  });
+};
+
 // Add event listeners to the submit and delete buttons
 console.log("js file running");
 $submitBtn.on("click", handleFormSubmit);
 $dishList.on("click", ".delete", handleDeleteBtnClick);
+//$updateList.on("click", ".ready", handleReadyBtnClick);
 //$pickup.on("click", ".delete", handleDeleteBtnClick);
+/*
+$(function () {
+  $(".ready").on("click", function (event) {
+    var id = $(this).data("id");
+ 
+    var newDevouredState = {
+      ready: 1
+    };
+    $.ajax("/api/dishes/" + id, {
+      type: "PUT",
+      data: newDevouredState
+    }).then(
+      function () {
+        //console.log("new devoured state is ", newDevouredState);
+        location.reload();
+      }
+    );
+  });
+*/
 
+  //----------------------------------------------------------------------------------
+
+  // This function updates a todo in our database
+  function updateDish(dish) {
+    $.ajax({
+      method: "PUT",
+      url: "/ready",
+      data: dish
+    }).then(refreshDishes);
+  }
+
+  $(".ready").on("click", function(event)	{
+    console.log("ready is clicked");
+    var updatedDish = $(this).data("Dish");
+    console.log(updatedDish);
+    updatedDish.ready = 1;
+    updatedDish(updatedDish);
+});
