@@ -150,11 +150,15 @@ var handleDeleteBtnClick = function() {
 
 
 var handleReadyBtnClick = function() {
+  console.log("Ready button clicked.");
   var idToUpdate = $(this)
     .parent()
     .attr("data-id");
+
+  var updatedDish = $(this).data("Dish");
+  updatedDish.ready = 1;
   
-  API.updateDish(idToDelete).then(function() {
+  API.updateDish(updatedDish).then(function() {
     refreshDishes();
     location.reload();
   });

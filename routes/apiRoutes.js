@@ -19,7 +19,7 @@ module.exports = function(app) {
     app.put("/api/dishes", function(req, res) {
       db.Dish.update({ where: { id: req.params.id } }.then(function(dbDish) {
         res.json(dbDish);
-      });
+      }));
     });
 
 // think there will need to be an update/put here
