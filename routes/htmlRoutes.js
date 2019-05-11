@@ -40,7 +40,13 @@ module.exports = function(app) {
   });
 
   app.get("/ready", function(req, res) {
-    res.render("ready");
+    //res.render("ready");
+    db.Dish.findAll({}).then(function(dbDishes) {
+      res.render("ready", {
+        msg: "Welcome!",
+        dishes: dbDishes
+      });
+    });
   });
 
   // Render 404 page for any unmatched routes
