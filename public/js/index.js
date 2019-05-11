@@ -34,7 +34,7 @@ var API = {
     return $.ajax({
       type: "PUT",
       url: "api/dishes",
-      data: JSON.stringigy(dish)
+      data: JSON.stringify(dish)
     })
   },
   saveDish: function(dish) {
@@ -153,17 +153,26 @@ var handleDeleteBtnClick = function() {
 
 var handleReadyBtnClick = function() {
   console.log("Ready button clicked.");
-  //var idToUpdate = $(this)
+  //var updatedDish = $(this).data("Dish");
+  //var updatedDish = $(this)
   //  .parent()
-  //  .attr("data-id");
+  //  .attr("data-id")
+  //  .data;
+  console.log("here 1");
+  //updatedDish.data.ready = true;
+  console.log("here 2");
 
+  var dish = {
+    text: this.dataset.text,
+    ready: true  
+  };
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = 1;
   //$(this).data("Dish").ready = 1;
-  var updatedDish = $(this).data("Dish");
-  updatedDish.ready = true;
+  //var updatedDish = $(this).data("Dish");
+  //updatedDish.ready = true;
   
-  API.updateDish(updatedDish).then(function() {
+  API.updateDish(dish).then(function() {
     refreshDishes();
     location.reload();
   });
