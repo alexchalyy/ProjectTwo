@@ -173,7 +173,7 @@ var handleReadyBtnClick = function() {
 console.log("js file running");
 $submitBtn.on("click", handleFormSubmit);
 $dishList.on("click", ".delete", handleDeleteBtnClick);
-$dishList.on("click", ".ready", handleReadyBtnClick());
+$orderList.on("click", ".ready", handleReadyBtnClick);
 //$updateList.on("click", ".ready", handleReadyBtnClick);
 //$pickup.on("click", ".delete", handleDeleteBtnClick);
 /*
