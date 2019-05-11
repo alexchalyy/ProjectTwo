@@ -17,7 +17,7 @@ module.exports = function(app) {
 
     // Create a new example
     app.put("/api/dishes", function(req, res) {
-      db.Dish.create(req.body).then(function(dbDish) {
+      db.Dish.update({ where: { id: req.params.id } }.then(function(dbDish) {
         res.json(dbDish);
       });
     });
@@ -31,9 +31,9 @@ module.exports = function(app) {
        res.json(dbDish);
      });
    });
-
+/*
        // PUT route for updating todos. We can get the updated todo data from req.body
-       app.put("/ready", function(req, res) {
+       app.put("/api/dishes", function(req, res) {
         // Update takes in an object describing the properties we want to update, and
         // we use where to describe which objects we want to update
         db.Dish.update({
@@ -48,7 +48,7 @@ module.exports = function(app) {
         }).then(function(dbDish) {
           res.json(Dish);
         });
-      });
+      }); */
 
 };
 

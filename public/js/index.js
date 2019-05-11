@@ -153,7 +153,7 @@ var handleReadyBtnClick = function() {
   var idToUpdate = $(this)
     .parent()
     .attr("data-id");
-
+  
   API.updateDish(idToDelete).then(function() {
     refreshDishes();
     location.reload();
