@@ -1,7 +1,7 @@
 var $dishText;
 
 $(".order-button").on("click", function(){
-  window.location.href="/orders"
+  window.location.href="/orders";
   return $dishText = this.dataset.order
 })
 

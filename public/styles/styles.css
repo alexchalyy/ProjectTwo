@@ -6,6 +6,7 @@
   margin: 0 auto;
   text-align: center;
   font-size: 5rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .menu{
@@ -50,6 +51,14 @@
   width:100%;
 }
 
+.card-title {
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.card-text {
+  font-family: 'Roboto', sans-serif;
+}
+
 .queued-orders {
   padding:0;
  
@@ -72,14 +81,6 @@
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
 }
-.indexBlock {
-  z-index: 999;
-  position: absolute;
-  top: 11rem;
-  left: 4rem;
-  width: 16rem;
-}
-
 
 .container-fluid {
   margin-top: 1em;
@@ -106,9 +107,6 @@
   font-size: 3rem;
   font-weight: bold;
 }
-/* .jumboButton {
-  padding: 6px 8px 6px 16px;
-} */
 
 .carousel.carousel-fade .carousel-item {
   display: block;
@@ -117,15 +115,26 @@
   width: 100%
 }
 
-
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
 
- 
-.indexBlock {
-  z-index: 999;
-  position: absolute;
-  top: 11rem;
-  left: 4rem;
-  width: 16rem;
+}
+
+.ordered-title {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.completed-orders li{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+@media screen and (min-width: 1200px) {
+  .indexBlock {
+      z-index: 999;
+      position: absolute;
+      top: 25%;
+      left: 4rem;
+      width: 16rem;
+  }
 }
