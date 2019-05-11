@@ -1,11 +1,8 @@
 var $dishText;
 
 $(".order-button").on("click", function(){
-  var newDateObj = new Date(date.getTime() + minutes*60000);
-  console.log("Ready time: " + newDateObj);
   window.location.href="/orders"
   return $dishText = this.dataset.order
-  
 })
 
 var $submitBtn = $(".order-button");

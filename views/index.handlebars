@@ -1,69 +1,67 @@
+
 <div class="menu">
   <br>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/index">Tori's Deli
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/menu">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/orders">Check Orders<span class="sr-only">(current)</span></a>
+      <a class="navbar-brand" href="/index">Tori's Deli
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="/menu">Menu</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="/orders">Check Orders<span class="sr-only">(current)</span></a>
 
-        </li>
-      </ul>
-    </div>
+          </li>
+          </ul>
+      </div>
   </nav>
 
   <h1 class="menu-title animated fadeInRight">Tori's Deli </h1>
 
   <div id="card-wrap">
-
+  
     <div id="card-menu">
 
       <div class="queued">
-        <h2 class="ordered-title">Crafting your order</h2>
-        <ul class="queued-orders">
+          <h2 class="ordered-title">Crafting your order</h2>
+          <ul class="queued-orders">
 
           {{#each dishes}}
           {{#if this.ready}}
           {{else}}
-          <li class="list-group-item">
-            <!--data-id="{{this.id}}"-->
-            <!-- <a href="dish/{{this.id}}">{{this.text}}</a>-->
-            <p>Order: {{this.text}} </p>
-            <p>Ticket # {{this.id}}</p>
-            <p>Ready in a few minutes!</p>
-          </li>
-          {{/if}}
+            <li  class="list-group-item"><!--data-id="{{this.id}}"-->
+             <!-- <a href="dish/{{this.id}}">{{this.text}}</a>-->
+              <p>Order: {{this.text}} </p>
+              <p>Ticket # {{this.id}}</p>
+            </li>
+            {{/if}}
           {{/each}}
-        </ul>
+          </ul>
       </div>
 
       <div class="completed">
-        <h2 class="ordered-title">Ready for pick up</h2>
-        <ul class="completed-orders">
+          <h2 class="ordered-title">Ready for pick up</h2>
+          <ul class="completed-orders">
+          
           {{#each dishes}}
-          {{#if this.ready}}
-          <li class="list-group-item">
-            <p>Order: {{this.text}} </p>
-            <p>Ticket # {{this.id}}</p>
-            <button class="btn btn-danger float-center delete">Pick Up</button>
-          </li>
-          {{/if}}
+            {{#if this.ready}}
+            <li  class="list-group-item"><!--data-id="{{this.id}}"-->
+              <a href="dish/{{this.id}}">Order: {{this.text}}</a>
+              <p>Ticket # {{this.id}}</p>
+              <button class="btn btn-danger float-center delete">Pick Up</button>
+            </li>
+            {{/if}}
           {{/each}}
-        </ul>
-      </div>
-      <!--
+          </ul>
+      </div><!--
       <div class="col-5 offset-2">
         <h3>Ready to pick up</h3>
         <ul id="dish-list" class="list-group">
@@ -80,4 +78,4 @@
     </div>
 
   </div>
-</div>
+</div>  
