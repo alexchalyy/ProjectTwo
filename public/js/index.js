@@ -53,6 +53,7 @@ var API = {
       type: "GET"
     });
   },
+  
 
   //think there will need to be an update/put method here
 
@@ -123,7 +124,7 @@ var handleFormSubmit = function(event) {
   //the $dishText var below will add the data-order
   // attribute to the table
   var dish = {
-    text: $dishText,  
+    text: $dishText  
   };
   API.saveDish(dish).then(function() {
     //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
@@ -146,6 +147,8 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+
+
 var handleReadyBtnClick = function() {
   var idToUpdate = $(this)
     .parent()
@@ -161,6 +164,7 @@ var handleReadyBtnClick = function() {
 console.log("js file running");
 $submitBtn.on("click", handleFormSubmit);
 $dishList.on("click", ".delete", handleDeleteBtnClick);
+$dishList.on("click", ".ready", handleReadyBtnClick);
 //$updateList.on("click", ".ready", handleReadyBtnClick);
 //$pickup.on("click", ".delete", handleDeleteBtnClick);
 /*
@@ -186,14 +190,7 @@ $(function () {
   //----------------------------------------------------------------------------------
 
   // This function updates a todo in our database
-  function updateDish(dish) {
-    $.ajax({
-      method: "PUT",
-      url: "/ready",
-      data: dish
-    }).then(refreshDishes);
-  }
-
+/*
   $(".ready").on("click", function(event)	{
     console.log("ready is clicked");
     var updatedDish = $(this).data("Dish");
@@ -201,3 +198,4 @@ $(function () {
     updatedDish.ready = 1;
     updatedDish(updatedDish);
 });
+*/
