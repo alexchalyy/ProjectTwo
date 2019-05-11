@@ -123,6 +123,7 @@ var handleDeleteBtnClick = function() {
 
   API.deleteDish(idToDelete).then(function() {
     refreshDishes();
+    location.reload();
   });
 };
 
