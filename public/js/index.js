@@ -6,13 +6,15 @@ $(".order-button").on("click", function(){
 })
 
 var $submitBtn = $(".order-button");
+var $pickup = $(".delete");
 // Get references to page elements
 //commented out per David's advice
 // var $dishText = $("#example-text");
 
 //not sure these are needed for anything in our code yet:
 var $dishDescription = $("#example-description");
-var $dishList = $("#example-list");
+//var $dishList = $("#example-list");
+var $dishList = $(".completed-orders");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -31,17 +33,17 @@ var API = {
       url: "api/dishes",
       type: "GET"
     });
-  }
+  },
 
   //think there will need to be an update/put method here
 
 
-  // deleteDish: function(id) {
-  //   return $.ajax({
-  //     url: "api/dishes/" + id,
-  //     type: "DELETE"
-  //   });
-  // }
+   deleteDish: function(id) {
+    return $.ajax({
+       url: "api/dishes/" + id,
+       type: "DELETE"
+     });
+   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
@@ -114,6 +116,7 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
+  console.log("delete called");
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
@@ -124,5 +127,8 @@ var handleDeleteBtnClick = function() {
 };
 
 // Add event listeners to the submit and delete buttons
+console.log("js file running");
 $submitBtn.on("click", handleFormSubmit);
 $dishList.on("click", ".delete", handleDeleteBtnClick);
+//$pickup.on("click", ".delete", handleDeleteBtnClick);
+
