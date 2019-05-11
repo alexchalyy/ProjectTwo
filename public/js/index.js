@@ -124,12 +124,14 @@ var handleFormSubmit = function(event) {
   //the $dishText var below will add the data-order
   // attribute to the table
   var dish = {
-    text: $dishText  
+    text: this.dataset.text,
+    ready: true  
   };
   API.saveDish(dish).then(function() {
     //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
     // refreshExamples();
     // console.log("added order to db");
+
   });
 };
 
@@ -151,12 +153,15 @@ var handleDeleteBtnClick = function() {
 
 var handleReadyBtnClick = function() {
   console.log("Ready button clicked.");
-  var idToUpdate = $(this)
-    .parent()
-    .attr("data-id");
+  //var idToUpdate = $(this)
+  //  .parent()
+  //  .attr("data-id");
 
+  //var updatedDish = $(this).data("Dish");
+  //updatedDish.ready = 1;
+  //$(this).data("Dish").ready = 1;
   var updatedDish = $(this).data("Dish");
-  updatedDish.ready = 1;
+  updatedDish.ready = true;
   
   API.updateDish(updatedDish).then(function() {
     refreshDishes();
