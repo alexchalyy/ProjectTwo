@@ -1,8 +1,67 @@
 var $dishText;
 
+//  the "run" function
+
+var intervalId;
+
+var number = 10;
+
+function wait(ms){
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+ }
+}
+
+//----------------------------------------------------------
+
+//  The stop function
+function stop() {
+  //  Clears our intervalId
+  //  We just pass the name of the interval
+  //  to the clearInterval function.
+    console.log("stop!");
+    clearInterval(intervalId);
+  }  
+
+//----------------------------------------------------------
+
+//  The decrement function.
+function decrement() {
+  //  Decrease number by one.
+  console.log("decrement starts.");
+    number--;
+  //  Once number hits zero...
+    if (number === 0) {
+  //  ...run the stop function.
+      stop();
+      console.log("10 seconds passed!");
+   }
+  }
+
+//----------------------------------------------------------
+
+function run() {
+//  This is timer for 10 seconds.
+
+  console.log("timer starts.");
+  clearInterval(intervalId);
+  console.log("after clear interval.");
+  intervalId = setInterval(decrement, 1000);
+  console.log("after set interval is called.");
+}
+
+//--------------------------------------------------
+
 $(".order-button").on("click", function(){
+  console.log("b4 timer");
+  //run();
+  //console.log("after timer");
   window.location.href="/orders"
   return $dishText = this.dataset.order
+  //wait(5000);
+  //console.log("5 seconds passed!");
 })
 
 var $submitBtn = $(".order-button");
