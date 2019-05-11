@@ -19,9 +19,9 @@ module.exports = function(app) {
 
 //dont think this code is needed... not deleting anything
   // Delete an example by id
-  // app.delete("/api/dishes/:id", function(req, res) {
-  //   db.Dish.destroy({ where: { id: req.params.id } }).then(function(dbDish) {
-  //     res.json(dbDish);
-  //   });
-  // });
+   app.delete("/api/dishes/:id", function(req, res) {
+     db.Dish.destroy({ where: { id: req.params.id } }).then(function(dbDish) {
+       res.json(dbDish);
+     });
+   });
 };
