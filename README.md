@@ -22,4 +22,4 @@ html files were written using bootstrap, css, and handlebars. Corousel was used 
 
 # Back End
 
-Javascript files were written using npm packages including node.js, express, sequalize, and handlebars. MVC model was used including defined and using all CRUD API routes for mysql database, as well as html routes.
+Javascript files were written using npm packages including node.js, express, sequalize, and handlebars. MVC model was used including defined and using all CRUD API routes for mysql database, as well as html routes. All pages are mobile responsive.
