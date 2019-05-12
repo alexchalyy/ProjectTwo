@@ -80,11 +80,11 @@
   width: 16rem;
 }
 
-
 .container-fluid {
   margin-top: 1em;
 
 }
+
 .jumbotron {
   background-image: url(deli1.jpg);
   background-size: cover;
@@ -101,18 +101,13 @@
   border-width: 5px;
   border-color: white;
   margin-top: -5%;
-  /*height: 200%;*/
 }
 #jumboHeadline {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: -20%;
-  /*margin-top: 20%;*/
 }
-/* .jumboButton {
-  padding: 6px 8px 6px 16px;
-} */
 
 .carousel.carousel-fade .carousel-item {
   display: block;
@@ -121,11 +116,9 @@
   width: 100%
 }
 
-
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
 
- 
 .indexBlock {
   z-index: 999;
   position: absolute;

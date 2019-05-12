@@ -1,76 +1,43 @@
+//  Those are API CRUD routes to post user inputs to db.
+
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  app.get("/api/dishes", function(req, res) {
-    db.Dish.findAll({}).then(function(dbDishes) {
+  app.get("/api/dishes", function (req, res) {
+    db.Dish.findAll({}).then(function (dbDishes) {
       res.json(dbDishes);
     });
   });
 
   // Create a new example
-  app.post("/api/dishes", function(req, res) {
-    db.Dish.create(req.body).then(function(dbDish) {
+  app.post("/api/dishes", function (req, res) {
+    db.Dish.create(req.body).then(function (dbDish) {
       res.json(dbDish);
     });
   });
 
-    // Create a new example
-    app.put("/api/dishes/:id", function(req, res) {
-      console.log("API update ID = " + req.params.id);
-      db.Dish.update({
-        ready: true
-      },
-      {
+  // Create a new example
+  app.put("/api/dishes/:id", function (req, res) {
+    console.log("API update ID = " + req.params.id);
+    db.Dish.update({
+      ready: true
+    },
+    {
       where: {
         id: req.params.id
-      }}
-      ).then(function(dbDish)  {
-        res.json(dbDish);
-      });
-      /*
-      console.log("API update ID = " + req.params.id);
-      db.Dish.update({
-        ready: true
-      }, {
-        where: {
-          id: req.params.id
-        }
-      }).then(function(dbDish) {
-        res.json(dbDish);
-      });/*
-      db.Dish.update({ where: { id: req.params.id } }).then(function(dbDish) {
-        res.json(dbDish);
-      });*/
+      }
+    }
+    ).then(function (dbDish) {
+      res.json(dbDish);
     });
+  });
 
-// think there will need to be an update/put here
-
-//dont think this code is needed... not deleting anything
   // Delete an example by id
-   app.delete("/api/dishes/:id", function(req, res) {
-     db.Dish.destroy({ where: { id: req.params.id } }).then(function(dbDish) {
-       res.json(dbDish);
-     });
-   });
-/*
-       // PUT route for updating todos. We can get the updated todo data from req.body
-       app.put("/api/dishes", function(req, res) {
-        // Update takes in an object describing the properties we want to update, and
-        // we use where to describe which objects we want to update
-        db.Dish.update({
-          text: req.body.text,
-          description: req.body.description,
-          ready: req.body.ready,
-          pickup: req.body.pickup
-        }, {
-          where: {
-            id: req.body.id
-          }
-        }).then(function(dbDish) {
-          res.json(Dish);
-        });
-      }); */
-
+  app.delete("/api/dishes/:id", function (req, res) {
+    db.Dish.destroy({ where: { id: req.params.id } }).then(function (dbDish) {
+      res.json(dbDish);
+    });
+  });
 };
 
