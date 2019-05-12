@@ -16,9 +16,9 @@ module.exports = function(app) {
   });
 
     // Create a new example
-    app.put("/api/dishes/:id", function(req, res) {
+    app.put("/api/dishes/", function(req, res) {
+      console.log("API update ID = " + req.params.id);
       db.Dish.update({
-        text: req.params.text,
         ready: true
       }, {
         where: {

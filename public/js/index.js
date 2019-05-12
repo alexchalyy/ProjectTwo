@@ -30,13 +30,13 @@ var $orderList = $(".queued-orders");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  updateDish: function(dishid)  {
+  updateDish: function(dish)  {
     return $.ajax({
-      url: "api/dishes/" + dishid,
-      type: "UPDATE"
-      //type: "PUT",
-      //url: "api/dishes",
-      //data: JSON.stringify(dish)
+      //url: "api/dishes/",
+      //type: "UPDATE",
+      type: "PUT",
+      url: "api/dishes",
+      data: JSON.stringify(dish)
     }).then(console.log("Dish ready!"));
   },
   saveDish: function(dish) {
@@ -169,7 +169,7 @@ var handleReadyBtnClick = function() {
   var dish = {
     id: updatedDishID,
     text: this.dataset.text,
-    ready: true  
+    ready: 1  
   };
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = 1;
@@ -177,7 +177,7 @@ var handleReadyBtnClick = function() {
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = true;
   //API.updateDish(updatedDishID).then(function() {
-  API.updateDish(updatedDishID).then(function() {
+  API.updateDish(dish).then(function() {
     refreshDishes();
     location.reload();
   });
