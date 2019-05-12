@@ -16,10 +16,20 @@ module.exports = function(app) {
   });
 
     // Create a new example
-    app.put("/api/dishes", function(req, res) {
-      db.Dish.update({ where: { id: req.params.id } }.then(function(dbDish) {
+    app.put("/api/dishes/:id", function(req, res) {
+      db.Dish.update({
+        text: req.params.text,
+        ready: true
+      }, {
+        where: {
+          id: req.params.id
+        }
+      }).then(function(dbDish) {
         res.json(dbDish);
-      }));
+      });/*
+      db.Dish.update({ where: { id: req.params.id } }).then(function(dbDish) {
+        res.json(dbDish);
+      });*/
     });
 
 // think there will need to be an update/put here

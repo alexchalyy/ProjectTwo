@@ -30,12 +30,14 @@ var $orderList = $(".queued-orders");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  updateDish: function(dish)  {
+  updateDish: function(dishid)  {
     return $.ajax({
-      type: "PUT",
-      url: "api/dishes",
-      data: JSON.stringify(dish)
-    })
+      url: "api/dishes/" + dishid,
+      type: "UPDATE"
+      //type: "PUT",
+      //url: "api/dishes",
+      //data: JSON.stringify(dish)
+    }).then(console.log("Dish ready!"));
   },
   saveDish: function(dish) {
     return $.ajax({
@@ -124,6 +126,7 @@ var handleFormSubmit = function(event) {
   //the $dishText var below will add the data-order
   // attribute to the table
   var dish = {
+    id: this.id,
     text: this.dataset.text,
     ready: true  
   };
@@ -154,15 +157,17 @@ var handleDeleteBtnClick = function() {
 var handleReadyBtnClick = function() {
   console.log("Ready button clicked.");
   //var updatedDish = $(this).data("Dish");
-  //var updatedDish = $(this)
-  //  .parent()
-  //  .attr("data-id")
+  var updatedDishID = $(this)
+    .parent()
+    .attr("data-id");
+  console.log("ID is " + updatedDishID);
   //  .data;
   console.log("here 1");
   //updatedDish.data.ready = true;
   console.log("here 2");
 
   var dish = {
+    id: updatedDishID,
     text: this.dataset.text,
     ready: true  
   };
@@ -171,8 +176,8 @@ var handleReadyBtnClick = function() {
   //$(this).data("Dish").ready = 1;
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = true;
-  
-  API.updateDish(dish).then(function() {
+  //API.updateDish(updatedDishID).then(function() {
+  API.updateDish(updatedDishID).then(function() {
     refreshDishes();
     location.reload();
   });
