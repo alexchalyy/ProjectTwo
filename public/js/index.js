@@ -170,7 +170,7 @@ var handleReadyBtnClick = function() {
 
   console.log("id to update: " + idToUpdate);
   API.updateDish(idToUpdate).then(function() {
-    refreshDishes();
+    //refreshDishes();
     location.reload();
   });
   /*
