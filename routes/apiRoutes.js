@@ -1,27 +1,43 @@
+//  Those are API CRUD routes to post user inputs to db.
+
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Get all examples
-  app.get("/api/dishes", function(req, res) {
-    db.Dish.findAll({}).then(function(dbDishes) {
+  app.get("/api/dishes", function (req, res) {
+    db.Dish.findAll({}).then(function (dbDishes) {
       res.json(dbDishes);
     });
   });
 
   // Create a new example
-  app.post("/api/dishes", function(req, res) {
-    db.Dish.create(req.body).then(function(dbDish) {
+  app.post("/api/dishes", function (req, res) {
+    db.Dish.create(req.body).then(function (dbDish) {
       res.json(dbDish);
     });
   });
 
-// think there will need to be an update/put here
+  // Create a new example
+  app.put("/api/dishes/:id", function (req, res) {
+    console.log("API update ID = " + req.params.id);
+    db.Dish.update({
+      ready: true
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+    ).then(function (dbDish) {
+      res.json(dbDish);
+    });
+  });
 
-//dont think this code is needed... not deleting anything
   // Delete an example by id
-   app.delete("/api/dishes/:id", function(req, res) {
-     db.Dish.destroy({ where: { id: req.params.id } }).then(function(dbDish) {
-       res.json(dbDish);
-     });
-   });
+  app.delete("/api/dishes/:id", function (req, res) {
+    db.Dish.destroy({ where: { id: req.params.id } }).then(function (dbDish) {
+      res.json(dbDish);
+    });
+  });
 };
+

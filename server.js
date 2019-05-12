@@ -59,4 +59,17 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.handlebars"));
+});
+
+
+   // prints `34e84d93de6a4650815e5420e0` to the console
+   console.log(process.env.DELI_ID); 
+
+   // prints `5162cd8b5cf940f48702df` to the console
+   console.log(process.env.DELI_SECRET);
+   // etc.
+
+
 module.exports = app;

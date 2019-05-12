@@ -1,3 +1,5 @@
+//  This creates a new table to store orders.
+
 module.exports = function(sequelize, DataTypes) {
   var Dish = sequelize.define("Dish", {
     text: DataTypes.STRING,
@@ -7,13 +9,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Dish;
 };
-
-/*
-module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
-  });
-  return Example;
-}; */
-

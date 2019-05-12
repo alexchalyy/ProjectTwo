@@ -1,3 +1,5 @@
+//  This exports sequalize table to db.
+
 "use strict";
 
 var fs = require("fs");

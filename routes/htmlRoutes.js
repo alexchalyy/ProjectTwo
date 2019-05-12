@@ -1,3 +1,5 @@
+//  Those are html routes for Deli website.
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -21,18 +23,6 @@ module.exports = function(app) {
       });
     });
   });
-
-  //dont think this is needed... its not used
-  
-  // Load example page and pass in an example by id
-  // app.get("/dish/:id", function(req, res) {
-  //   //console.log("here");
-  //   db.Dish.findOne({ where: { id: req.params.id } }).then(function(dbDish) {
-  //     res.render("dish", {
-  //       dish: dbDish
-  //     });
-  //   });
-  // });
   
   // render the menu page
   app.get("/menu", function(req, res) {
@@ -40,7 +30,6 @@ module.exports = function(app) {
   });
 
   app.get("/ready", function(req, res) {
-    //res.render("ready");
     db.Dish.findAll({}).then(function(dbDishes) {
       res.render("ready", {
         msg: "Welcome!",
