@@ -30,14 +30,20 @@ var $orderList = $(".queued-orders");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  updateDish: function(dish)  {
+  updateDish: function(updatedDishID)  {
+    console.log("updated dish id = " + updatedDishID);
+    return $.ajax({
+      url: "api/dishes/" + updatedDishID,
+      type: "PUT"
+    });
+    /*
     return $.ajax({
       //url: "api/dishes/",
       //type: "UPDATE",
       type: "PUT",
       url: "api/dishes",
-      data: JSON.stringify(dish)
-    }).then(console.log("Dish ready!"));
+      data: JSON.stringify(updatedDishID)
+    }).then(console.log("Dish ready!"));*/
   },
   saveDish: function(dish) {
     return $.ajax({
@@ -126,13 +132,15 @@ var handleFormSubmit = function(event) {
   //the $dishText var below will add the data-order
   // attribute to the table
   var dish = {
-    id: this.id,
-    text: this.dataset.text,
-    ready: true  
+    text: $dishText
+    //id: this.id,
+    //text: this.dataset.text,
+    //ready: true  
   };
   API.saveDish(dish).then(function() {
     //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
-    // refreshExamples();
+     //refreshDishes();
+     location.reload();
     // console.log("added order to db");
 
   });
@@ -147,7 +155,7 @@ var handleDeleteBtnClick = function() {
     .attr("data-id");
 
   API.deleteDish(idToDelete).then(function() {
-    refreshDishes();
+    //refreshDishes();
     location.reload();
   });
 };
@@ -155,8 +163,19 @@ var handleDeleteBtnClick = function() {
 
 
 var handleReadyBtnClick = function() {
+  console.log("update called");
+  var idToUpdate = $(this)
+    .parent()
+    .attr("data-id");
+
+  console.log("id to update: " + idToUpdate);
+  API.updateDish(idToUpdate).then(function() {
+    refreshDishes();
+    location.reload();
+  });
+  /*
   console.log("Ready button clicked.");
-  //var updatedDish = $(this).data("Dish");
+  var updatedDishInfo = $(this).data("Dish");
   var updatedDishID = $(this)
     .parent()
     .attr("data-id");
@@ -166,21 +185,22 @@ var handleReadyBtnClick = function() {
   //updatedDish.data.ready = true;
   console.log("here 2");
 
+  console.log("Dish: " + this.text);
   var dish = {
     id: updatedDishID,
-    text: this.dataset.text,
-    ready: 1  
+    //text: updatedDishInfo.data.text,
+    ready: true  
   };
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = 1;
   //$(this).data("Dish").ready = 1;
   //var updatedDish = $(this).data("Dish");
   //updatedDish.ready = true;
-  //API.updateDish(updatedDishID).then(function() {
-  API.updateDish(dish).then(function() {
+  API.updateDish(updatedDishID).then(function() {
+  //API.updateDish(dish).then(function() {
     refreshDishes();
     location.reload();
-  });
+  });*/
 };
 
 // Add event listeners to the submit and delete buttons
