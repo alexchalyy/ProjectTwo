@@ -160,8 +160,6 @@ var handleDeleteBtnClick = function() {
   });
 };
 
-
-
 var handleReadyBtnClick = function() {
   console.log("update called");
   var idToUpdate = $(this)
