@@ -1,9 +1,8 @@
 //  This javascript performs all logic for making orders and picking them up on Deli website.
 
 var $dishText;
-
 $(".order-button").on("click", function(){
-  window.location.href = "/orders";
+ 
   return $dishText = this.dataset.order;
 });
 

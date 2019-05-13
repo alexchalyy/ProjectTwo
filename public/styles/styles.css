@@ -5,7 +5,11 @@
   padding: 2rem;
   margin: 0 auto;
   text-align: center;
-  font-size: 5rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.menu-title h1 {
+  font-size: 6rem;
 }
 
 .menu{
@@ -16,8 +20,6 @@
 }
 
 .menu-wrap{
-  /* background: url(/images/background.jpg); */
- 
   height:100%;
   width:100%;
   padding-bottom:35px;
@@ -50,6 +52,14 @@
   width:100%;
 }
 
+.card-title {
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.card-text {
+  font-family: 'Roboto', sans-serif;
+}
+
 .queued-orders {
   padding:0;
  
@@ -72,19 +82,11 @@
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
 }
-.indexBlock {
-  z-index: 999;
-  position: absolute;
-  top: 11rem;
-  left: 4rem;
-  width: 16rem;
-}
 
 .container-fluid {
   margin-top: 1em;
 
 }
-
 .jumbotron {
   background-image: url(deli1.jpg);
   background-size: cover;
@@ -100,13 +102,11 @@
   border-style: double;
   border-width: 5px;
   border-color: white;
-  margin-top: -5%;
 }
 #jumboHeadline {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: -20%;
 }
 
 .carousel.carousel-fade .carousel-item {
@@ -119,10 +119,22 @@
 .carousel.carousel-fade .carousel-item.active {
   opacity: 1 !important;
 
-.indexBlock {
-  z-index: 999;
-  position: absolute;
-  top: 11rem;
-  left: 4rem;
-  width: 16rem;
+}
+
+.ordered-title {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.completed-orders li{
+  font-family: 'Roboto', sans-serif;
+}
+
+@media screen and (min-width: 1200px) {
+  .indexBlock {
+      z-index: 999;
+      position: absolute;
+      top: 25%;
+      left: 4rem;
+      width: 16rem;
+  }
 }
