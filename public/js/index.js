@@ -2,9 +2,30 @@
 
 var $dishText;
 $(".order-button").on("click", function(){
- 
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://secret-plateau-65736.herokuapp.com/api/dishes",
+    // "url": "http://localhost:3000/api/dishes",
+    "method": "GET",
+    "processData": false,
+    "data": ""
+  }
+  
+  $.ajax(settings).done(function (response) {
+    var orderNum = response[response.length-1].id + 1;
+    $("#order-number").text(orderNum);
+    console.log(response[response.length].id);
+  });
+  // window.location.href = "/orders";
+  $('#myModal').modal('show')
   return $dishText = this.dataset.order;
 });
+
+$('#myModal').on('hidden.bs.modal', function (e) {
+  window.location.href = "/ready";
+})
+
 
 var $submitBtn = $(".order-button");
 var $dishList = $(".completed-orders");
@@ -51,7 +72,7 @@ var handleFormSubmit = function(event) {
   };
   API.saveDish(dish).then(function() {
     //had to comment out this function call for now since i was getting a error that i couldnt diagnose yet
-    location.reload();
+    // location.reload();
   });
 };
 

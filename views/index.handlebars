@@ -25,7 +25,7 @@
   </nav>
 
   <div class="menu-title ">
-      <h1 class="animated flipInY">Tori's Deli</h1> 
+      <h1 class="animated fadeIn">Tori's Deli</h1> 
   </div>
 
   <div id="card-wrap">
@@ -39,16 +39,17 @@
           {{#each dishes}}
           {{#if this.ready}}
           {{else}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <p>Order: {{this.text}} </p>
-              <p>Ticket # {{this.id}}</p>
-              <p>Time Ordered: {{moment this.createdAt "hh:mm a"}}</p>
+            <li data-id="{{this.id}}" class="list-group-item animated fadeInUpBig">
+              <p class="ticket-font">Order: {{this.text}} </p>
+              <p class="ticket-font">Ticket # {{this.id}}</p>
+            <!--  <p class="ticket-font">Time Ordered: {{moment this.createdAt "hh:mm a"}}</p>-->
               <button class="btn btn-danger float-center ready">Ready!</button>
             </li>
             {{/if}}
           {{/each}}
           </ul>
       </div>
+      
 
     </div>
 
@@ -57,5 +58,5 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="/js/index.js"></script>
