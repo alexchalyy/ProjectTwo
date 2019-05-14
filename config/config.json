@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "trilogy-2",
-    "password": "david123",
-    "database": "delidb",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
+  "username": "root",
+  "password": "Bootcamp1!?",
+  "database": "delidb",
+  "host": "localhost",
+  "dialect": "mysql"
+},
   "test": {
     "username": "root",
     "password": null,
