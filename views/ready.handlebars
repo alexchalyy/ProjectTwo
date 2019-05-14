@@ -4,7 +4,7 @@
   <br>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Tori's Deli
+      <a class="navbar-brand" href="#">Tori's Deli
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,9 @@
       </div>
   </nav>
 
-  <h1 class="menu-title animated fadeInRight">Tori's Deli </h1>
+  <div class="menu-title ">
+      <h1 class="animated fadeIn">Tori's Deli</h1> 
+  </div>
 
   <div id="card-wrap">
   
@@ -35,10 +37,10 @@
           
           {{#each dishes}}
             {{#if this.ready}}
-            <li  data-id="{{this.id}}" class="list-group-item">
-              <p>Order: {{this.text}} </p>
-              <p>Ticket # {{this.id}}</p>
-              <button class="btn btn-danger float-center delete">Pick Up</button>
+            <li  data-id="{{this.id}}" class="list-group-item animated fadeInUpBig">
+              <p class="ticket-font">Order: {{this.text}} </p>
+              <p class="ticket-font">Ticket # {{this.id}}</p>
+              <button class="btn btn-success float-center delete">Pick Up</button>
             </li>
             {{/if}}
           {{/each}}

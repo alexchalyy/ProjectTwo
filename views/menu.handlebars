@@ -26,7 +26,9 @@
             </div>
         </nav>
 
-        <h1 class="menu-title animated fadeInLeft">Tori's Deli </h1>
+        <div class="menu-title ">
+            <h1 class="animated fadeIn">Tori's Deli</h1> 
+        </div>
 
         <div id="card-wrap">
 
@@ -39,7 +41,7 @@
 
                         <p class="card-text">Hot Pastrami pilled high on rye topped with Swiss and brown mustard.</p>
                         <p class="price">$12.99</p>
-                        <a href="/orders"><button type="button" class="btn btn-dark order-button" data-order="Pastrami">order</button></a>
+                        <button type="button" class="btn btn-dark order-button" data-order="Pastrami">order</button>
                     
                     </div>
                 </div>
@@ -50,7 +52,7 @@
                         <h5 class="card-title">Reuben</h5>
                         <p class="card-text">A deli tradition, corned beef, Swiss cheese, russian dressing, and sauerkraut on marbled rye.</p>
                         <p class="price">$13.99</p>
-                        <a href="/orders"><button type="button" class="btn btn-dark order-button" data-order="Reuben">order</button></a>
+                        <button type="button" class="btn btn-dark order-button" data-order="Reuben">order</button>
                     </div>
                 </div>
 
@@ -60,7 +62,7 @@
                         <h5 class="card-title">Turkey Club</h5>
                         <p class="card-text">Turkey, bacon, cheddar, lettuce, tomato, mayo, on toasted wheat.</p>
                         <p class="price">$10.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Turkey Club">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Turkey Club">order</button>
                     </div>
                 </div> 
 
@@ -70,7 +72,7 @@
                         <h5 class="card-title">French Dip</h5>
                         <p class="card-text">Thinly sliced beef piled high on a French roll with au jus for dipping.</p>
                         <p class="price">$10.99</p>
-                        <button type="button" class="btn btn-dark" class="order-button" data-order="French Dip">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="French Dip">order</button>
                     </div>
                 </div>
 
@@ -80,7 +82,7 @@
                         <h5 class="card-title">Tuna Melt</h5>
                         <p class="card-text">Albacore tuna salad with with melted american on whole wheat.</p>
                         <p class="price">$8.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Tuna Melt">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Tuna Melt">order</button>
                     </div>
                 </div>
 
@@ -90,7 +92,7 @@
                         <h5 class="card-title">Chicken Salad</h5>
                         <p class="card-text">Fresh Homemade Chicken Salad on a Croissant.</p>
                         <p class="price">$8.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Chicken Salad">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Chicken Salad">order</button>
                     </div>
                 </div>
 
@@ -100,7 +102,7 @@
                         <h5 class="card-title">Italian</h5>
                         <p class="card-text">Sopressatta, Salami, Capicola, Provolone, Peppers, and Balsamic Vinaigrette on an Italian Roll</p>
                         <p class="price">$13.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Italian">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Italian">order</button>
                     </div>
                 </div>
 
@@ -110,7 +112,7 @@
                         <h5 class="card-title">Brisket</h5>
                         <p class="card-text">Slices of slow-smoked brisket, hand-carved to order served on a brioche bun.</p>
                         <p class="price">$12.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Brisket">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Brisket">order</button>
                     </div>
                 </div>
 
@@ -120,7 +122,7 @@
                         <h5 class="card-title">Ham and Swiss</h5>
                         <p class="card-text">Smoked Black Forest ham, Swiss cheese, mustard, and pickles served on a toasted wheat.</p>
                         <p class="price">$10.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Ham and Swiss">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Ham and Swiss">order</button>
                     </div>
                 </div>
 
@@ -130,7 +132,7 @@
                         <h5 class="card-title">Meatball</h5>
                         <p class="card-text">Meatballs, marinara, provolone and parmesan served on a toasted Italian Roll.</p>
                         <p class="price">$11.99</p>
-                        <button type="button" class="btn btn-dark order-button" data-order="Meatball">order</button>
+                    <button type="button" class="btn btn-dark order-button" data-order="Meatball" >order</button>
                     </div>
                 </div>
 
@@ -139,27 +141,28 @@
         </div>  
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Order Number</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" >
-                {{#each dishes}}
-                <p># {{this.id}}</p>
-                {{/each}}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+        <div class="modal fade animated rollIn" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tori's Deli </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" >
+                    <div class="modal-body animated zoomIn" >   
+                        <p class="ticket-font">Thank you for your order!</p>
+                        <p class="ticket-font">Your Ticket # : <span id="order-number" class="ticket-font"></span> </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
             </div>
         </div>
-        </div>
-        
+         
 
     </div>
 </div>
