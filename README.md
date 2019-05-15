@@ -10,7 +10,7 @@ When menu page is opened, Deli menu is displayed. Links to home, kitchen, and or
 
 ![menu](public/images/menu.PNG)
 
-When the user clicks on order button next to any sandwitch on the menu, modal page is opened with the order name and order number. Screenshot is below.
+When the user clicks on order button next to any sandwitch on the menu, modal page is opened with order number. Screenshot is below.
 
 ![order-modal](public/images/order_modal.PNG)
 
