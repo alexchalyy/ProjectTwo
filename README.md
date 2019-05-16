@@ -32,4 +32,4 @@ html files were written using bootstrap, css, and handlebars. Animate.css was us
 
 # Back End
 
-Javascript files were written using npm packages including node.js, express, sequalize, and handlebars. MVC model was used including defined and using all CRUD API routes for mysql database, as well as html routes. All pages are mobile responsive.
+Javascript files were written using npm packages including node.js, express, sequalize, and handlebars. MVC model was used including  all CRUD API routes for mysql database, as well as html routes. All pages are mobile responsive.
