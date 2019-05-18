@@ -128,6 +128,9 @@
 .ordered-title {
   font-family: 'Josefin Sans', sans-serif;
 }
+.completed-orders {
+  margin: 0 auto;
+}
 
 .completed-orders li{
   font-family: 'Roboto', sans-serif;
@@ -152,16 +155,28 @@
   font-size: 1.75rem;
 
 }
+.indexBlock {
+  z-index: 999;
+  position: absolute;
+  top: 25%;
+  left: 4rem;
+  width: 16rem;
+}
 
-@media  (min-width: 1200px) {
+
+@media  (max-width: 1200px) {
   .indexBlock {
       z-index: 999;
+      /* display: block; */
       position: absolute;
-      top: 25%;
-      left: 4rem;
-      width: 16rem;
+      top: 100%;
+      left: 0;
+      width: 100%;
+  }  
+
+  .navbar{
+    font-size:1.25rem;
   }
+  
 
-
- 
 } 
